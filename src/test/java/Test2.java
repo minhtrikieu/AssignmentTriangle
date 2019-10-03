@@ -18,14 +18,11 @@ public class Test2 {
             }
         }
         Processing triangle = new Processing(a, b, c);
-        if (triangle.checkTriangle() == true) {
-            triangle.triangle();
-        } else {
-            System.out.println("Error triangle");
-        }
+       if (triangle.checkTriangle() == true) {
+          triangle.triangle();
+     } else {
+         System.out.println("Error triangle");
+       }
     }
-    /*
-    public int addNumber(int a,int b){
-        return a+b;
-    }*/
+
 }

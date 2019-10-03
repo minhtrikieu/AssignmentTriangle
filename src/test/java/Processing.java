@@ -15,7 +15,41 @@ public class Processing {
         } else {
             return false;
         }
+    }
 
+    public boolean checkEquilateral(){
+        if(checkTriangle() == true){
+            if(a == b && b == c){
+                return true;
+            }
+        }
+        return false;
+        }
+    public boolean checkIsosceles(){
+        if(checkTriangle() == true){
+            if(a == b || b == c || a == c){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean checkRightangled(){
+        if(checkTriangle() == true){
+            if((Math.pow(a, 2) + Math.pow(b, 2)) == Math.pow(c, 2) || (Math.pow(b, 2) + Math.pow(c, 2)) == Math.pow(a, 2)
+                    || (Math.pow(c, 2) + Math.pow(a, 2)) == Math.pow(b, 2)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean checkAcute(){
+        if(checkTriangle() == true){
+            if ((Math.pow(a, 2) + Math.pow(b, 2) > Math.pow(c, 2)) || (Math.pow(a, 2) + Math.pow(c, 2)) > Math.pow(b, 2) ||
+                    (Math.pow(c, 2) + Math.pow(b, 2)) > Math.pow(a, 2)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public String triangle() {
@@ -33,7 +67,5 @@ public class Processing {
         } else {
             return ("This is Obtuse triangle");
         }
-
-
     }
 }
