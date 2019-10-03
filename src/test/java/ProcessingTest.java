@@ -4,17 +4,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ProcessingTest {
-    Processing process = new Processing(3,4,5);
+    Processing triangle1 = new Processing(3,4,5);
     @Test
     public void checktriangle() {
-        boolean result = process.checkTriangle();
+        boolean result = triangle1.checkTriangle();
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void triangle() {
-        if(process.checkTriangle()== true){
-            Assert.assertEquals("This is Right-angled triangle",process.triangle());
+        if(triangle1.checkTriangle()== true){
+            Assert.assertEquals("This is Right-angled triangle",triangle1.triangle());
         }
 
     }
