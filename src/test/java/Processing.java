@@ -10,46 +10,30 @@ public class Processing {
     }
 
     public boolean checkTriangle() {
-        if ((a + b > c) && (a + c > b) && (b + c > a)) {
-            return true;
-        } else {
-            return false;
-        }
+            return ((a + b > c) && (a + c > b) && (b + c > a));
+
     }
 
-    public boolean checkEquilateral(){
-        if(checkTriangle() == true){
-            if(a == b && b == c){
-                return true;
-            }
-        }
-        return false;
-        }
-    public boolean checkIsosceles(){
-        if(checkTriangle() == true){
-            if(a == b || b == c || a == c){
-                return true;
-            }
-        }
-        return false;
+    public boolean checkEquilateral() {
+            return (checkTriangle() && a == b && b == c);
     }
-    public boolean checkRightangled(){
-        if(checkTriangle() == true){
-            if((Math.pow(a, 2) + Math.pow(b, 2)) == Math.pow(c, 2) || (Math.pow(b, 2) + Math.pow(c, 2)) == Math.pow(a, 2)
-                    || (Math.pow(c, 2) + Math.pow(a, 2)) == Math.pow(b, 2)){
-                return true;
-            }
-        }
-        return false;
+
+    public boolean checkIsosceles() {
+            return (checkTriangle() && (a == b || b == c || a == c)) ;
+
     }
-    public boolean checkAcute(){
-        if(checkTriangle() == true){
-            if ((Math.pow(a, 2) + Math.pow(b, 2) > Math.pow(c, 2)) || (Math.pow(a, 2) + Math.pow(c, 2)) > Math.pow(b, 2) ||
-                    (Math.pow(c, 2) + Math.pow(b, 2)) > Math.pow(a, 2)){
-                return true;
-            }
-        }
-        return false;
+
+    public boolean checkRightangled() {
+        return (checkTriangle() && (Math.pow(a, 2) + Math.pow(b, 2)) == Math.pow(c, 2) || (Math.pow(b, 2) + Math.pow(c, 2)) == Math.pow(a, 2)
+                || (Math.pow(c, 2) + Math.pow(a, 2)) == Math.pow(b, 2));
+
+    }
+
+    public boolean checkAcute() {
+
+        return checkTriangle() && (Math.pow(a, 2) + Math.pow(b, 2) > Math.pow(c, 2)) || (Math.pow(a, 2) + Math.pow(c, 2)) > Math.pow(b, 2) ||
+                (Math.pow(c, 2) + Math.pow(b, 2)) > Math.pow(a, 2);
+
     }
 
     public String triangle() {

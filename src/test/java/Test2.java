@@ -1,8 +1,10 @@
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Test2 {
+    private static final Logger logger = Logger.getLogger(Test2.class.getName());
     public static void main(String[] args) {
-        System.out.println("Enter 3 dimensions of the triangle \n");
+        logger.info("Enter 3 dimensions of the triangle \n");
         Scanner scanner = new Scanner(System.in);
         int a = 0;
         int b = 0;
@@ -18,10 +20,10 @@ public class Test2 {
             }
         }
         Processing triangle = new Processing(a, b, c);
-       if (triangle.checkTriangle() == true) {
-          triangle.triangle();
+       if (triangle.checkTriangle()) {
+           logger.info(triangle.triangle());
      } else {
-         System.out.println("Error triangle");
+         logger.info("Error triangle");
        }
     }
 
